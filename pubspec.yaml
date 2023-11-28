@@ -18,7 +18,7 @@ dependencies:
   # infrastructure
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.2.2
   #  Domain
   validators: ^3.0.0
   fpdart: ^1.1.0
@@ -39,7 +39,9 @@ dev_dependencies:
   json_serializable: ^6.3.1
   riverpod_lint: ^2.3.2
   custom_lint: ^0.5.4
+  go_router_builder: ^2.3.0
 flutter:
   uses-material-design: true
   generate: true
 
+scripts: derry.yaml

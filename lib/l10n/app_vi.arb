@@ -1,0 +1,17 @@
+{
+  "addOrganization": "Thêm tổ chức",
+  "cancel": "Hủy",
+  "create": "Thêm",
+  "departmentCreateBtn": "Thêm",
+  "departmentCreateFormFieldErrorText": "Tên phải có ít nhất 2 ký tự",
+  "departmentCreateFormFieldHintText": "Tên bộ phận",
+  "departmentUpdateBtn": "Cập nhập",
+  "description": "Miêu tả",
+  "emailInvalid": "Invalid email",
+  "or": "hoặc",
+  "organizationName": "Tên tổ chức",
+  "organizationNameNotEmpty": "Tên tổ chức không được để trống",
+  "signInWithGoogle": "Đăng nhập với google",
+  "somethingWentWrong": "Đã xảy ra lỗi",
+  "yourOrganizations": "Tổ chức của bạn"
+}

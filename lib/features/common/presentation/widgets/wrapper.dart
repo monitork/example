@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+/// Common widget [Wrapper]
 class Wrapper extends ConsumerStatefulWidget {
+  // ignore: public_member_api_docs
   const Wrapper({
-    super.key,
     required this.child,
+    super.key,
     this.tablet,
     this.desktop,
     this.onFocusGained,
@@ -51,8 +53,6 @@ class _WrapperState extends ConsumerState<Wrapper> with WidgetsBindingObserver {
   final _visibilityDetectorKey = UniqueKey();
   bool _isWidgetVisible = false;
   bool _isAppInForeground = true;
-
-  late ProviderFamily controller;
 
   @override
   void initState() {

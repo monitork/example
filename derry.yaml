@@ -1,0 +1,6 @@
+gen_all:
+  - fvm flutter pub get
+  - fvm flutter pub run build_runner build --delete-conflicting-outputs
+gen_config:
+  - fvm flutter pub get
+  - fvm flutter pub run build_runner build --delete-conflicting-outputs --build-filter 'lib/config/*.dart'
