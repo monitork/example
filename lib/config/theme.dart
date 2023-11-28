@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
+import 'package:go_money/config/app_colors.dart';
 
 /// Default [ThemeData] for Example
 class AppTheme {
@@ -13,7 +13,6 @@ class AppTheme {
   ThemeData get themeData {
     return ThemeData(brightness: _brightness).copyWith(
       colorScheme: _colorScheme,
-      useMaterial3: true,
     );
   }
 

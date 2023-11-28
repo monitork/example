@@ -1,14 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_money/config/app_provider.dart' as app_provider;
+import 'package:go_money/config/app_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Initializes services and controllers before the start of the application
 Future<ProviderContainer> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  final prefs = await SharedPreferences.getInstance();
   final container = ProviderContainer(
-    overrides: [], //supabaseProvider.overrideWithValue(Supabase.instance)
+    overrides: [
+      sharedPreferencesProvider.overrideWith((ref) => prefs),
+    ],
     observers: [if (kDebugMode) _Logger()],
   );
   await app_provider.intGlobalProvider(container);

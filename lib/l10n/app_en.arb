@@ -1,4 +1,5 @@
 {
+  "appName" : "EMoney",
   "addOrganization": "Add Organization",
   "cancel": "Cancel",
   "create": "Create",
@@ -13,5 +14,16 @@
   "organizationNameNotEmpty": "Organization name must not be empty",
   "signInWithGoogle": "Sign In With Google",
   "somethingWentWrong": "Something went wrong",
-  "yourOrganizations": "Your organizations"
+  "yourOrganizations": "Your organizations",
+  "counterText": "Counter {counterNumber}",
+  "@counterText": {
+    "placeholders": {
+      "counterNumber": {
+        "type": "int"
+      }
+    }
+  },
+  "btnIncreasement": "Increasement",
+  "btnChangeLanguage": "Change Language",
+  "endText": "================================================="
 }

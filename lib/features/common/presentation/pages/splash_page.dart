@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_money/config/app_router.dart';
+import 'package:go_money/features/common/presentation/widgets/wrapper.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// Default app splash screen
@@ -17,8 +18,10 @@ class SplashPage extends HookConsumerWidget {
       },
       [],
     );
-    return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
+    return const Wrapper(
+      child: Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      ),
     );
   }
 }

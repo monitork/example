@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/ui_extension.dart';
 import 'package:validators/validators.dart';
-
-import 'extensions/ui_extension.dart';
 
 /// Shorthand type for validator function
 typedef ValidatorFunction = String? Function(String?);

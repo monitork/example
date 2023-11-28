@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:go_money/l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,8 +12,8 @@ part 'app_provider.g.dart';
 
 /// Exposes [SharedPreferences] instance
 @riverpod
-FutureOr<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) {
-  return SharedPreferences.getInstance();
+SharedPreferences sharedPreferences(SharedPreferencesRef ref) {
+  return throw UnimplementedError();
 }
 
 ///
@@ -24,5 +26,9 @@ FutureOr<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) {
 
 /// Triggered from bootstrap() to complete futures
 Future<void> intGlobalProvider(ProviderContainer container) async {
-  await container.read(sharedPreferencesProvider.future);
+  //Core
+  container.read(localeProvider);
+  if (kDebugMode) {
+    print('[SHIN] ....');
+  }
 }

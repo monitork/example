@@ -3,4 +3,7 @@ gen_all:
   - fvm flutter pub run build_runner build --delete-conflicting-outputs
 gen_config:
   - fvm flutter pub get
-  - fvm flutter pub run build_runner build --delete-conflicting-outputs --build-filter 'lib/config/*.dart'
+  - fvm flutter pub run build_runner build --delete-conflicting-outputs --build-filter='lib/config/*.dart'
+gen_common:
+  - fvm flutter pub get
+  - fvm flutter pub run build_runner build --delete-conflicting-outputs --build-filter='lib/features/common/**/**.dart'
