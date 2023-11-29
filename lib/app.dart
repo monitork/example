@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_money/config/app_router.dart';
-import 'package:go_money/config/theme.dart';
+import 'package:go_money/config/app_theme.dart';
 import 'package:go_money/features/common/application/localization_controller.dart';
 import 'package:go_money/features/common/application/theme_controller.dart';
 import 'package:go_money/features/common/presentation/utils/extensions/ui_extension.dart';
@@ -22,8 +22,8 @@ class MoneyApp extends HookConsumerWidget {
     return MaterialApp.router(
       onGenerateTitle: (context) => context.tr.appName,
       themeMode: ref.watch(themeControllerProvider) ? ThemeMode.dark : ThemeMode.light,
-      theme: AppTheme(Brightness.light).themeData,
-      darkTheme: AppTheme(Brightness.dark).themeData,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: ref.watch(localizationControllerProvider),
