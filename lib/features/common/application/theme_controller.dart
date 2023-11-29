@@ -13,10 +13,8 @@ class ThemeController extends _$ThemeController {
   }
 
   ///
-  void change({bool isDark = false}) {
-    if (isDark != state) {
-      state = isDark;
-      ref.read(themeRepositoryProvider).setTheme(isDark: isDark);
-    }
+  void change() {
+    state = !state;
+    ref.read(themeRepositoryProvider).setTheme(isDark: state);
   }
 }
