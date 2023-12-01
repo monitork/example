@@ -5,7 +5,7 @@ import 'package:go_money/config/app_router.dart';
 import 'package:go_money/config/app_theme.dart';
 import 'package:go_money/features/common/application/localization_controller.dart';
 import 'package:go_money/features/common/application/theme_controller.dart';
-import 'package:go_money/features/common/presentation/utils/extensions/ui_extension.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 ///

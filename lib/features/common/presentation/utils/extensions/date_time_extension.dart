@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:intl/intl.dart';
+part of 'extensions.dart';
 
 /// Extension that allows to substitute [DateTime.now] with a testable function
 extension DateTimeX on DateTime {

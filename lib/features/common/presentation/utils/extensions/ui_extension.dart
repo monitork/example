@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+part of 'extensions.dart';
 
 /// A set of useful [BuildContext] extensions
 extension BuildContextX on BuildContext {
@@ -55,4 +54,22 @@ extension BuildContextX on BuildContext {
                     ? (sm ?? defaultVal)
                     : defaultVal;
   }
+
+  ///
+  double getHeight([double factor = 1]) {
+    assert(factor != 0, 'factor must be > 0 ');
+    return MediaQuery.of(this).size.height * factor;
+  }
+
+  ///
+  double getWidth([double factor = 1]) {
+    assert(factor != 0, 'factor must be > 0 ');
+    return MediaQuery.of(this).size.width * factor;
+  }
+
+  ///
+  double get height => getHeight();
+
+  ///
+  double get width => getWidth();
 }
