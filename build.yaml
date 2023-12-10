@@ -29,10 +29,3 @@ targets:
             - "lib/config/app_router.dart"
           exclude:
             - "lib/features/**.dart"
-      drift_dev:
-        options:
-          store_date_time_values_as_text: true
-          sql:
-            dialect: sqlite
-            options:
-              modules: [fts5]
