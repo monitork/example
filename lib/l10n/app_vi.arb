@@ -1,5 +1,5 @@
 {
-  "appName" : "EMoney",
+  "appName": "EMoney",
   "addOrganization": "Thêm tổ chức",
   "cancel": "Hủy",
   "create": "Thêm",
@@ -9,6 +9,7 @@
   "departmentUpdateBtn": "Cập nhập",
   "description": "Miêu tả",
   "emailInvalid": "Invalid email",
+  "email": "Thư điện tử",
   "or": "hoặc",
   "organizationName": "Tên tổ chức",
   "organizationNameNotEmpty": "Tên tổ chức không được để trống",
@@ -26,5 +27,8 @@
   "btnIncreasement": "Tăng",
   "btnChangeLanguage": "Đổi ngôn ngữ",
   "btnChangeTheme": "Đổi giao diện",
+  "hello": "Xin chào",
+  "authPage": "Trang cá nhân",
+  "homePage": "Trang chủ",
   "endText": "================================================="
 }

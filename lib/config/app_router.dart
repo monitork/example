@@ -4,13 +4,17 @@ import 'package:go_money/features/auth/presentation/pages/login_page.dart';
 import 'package:go_money/features/auth/presentation/pages/profile_page.dart';
 import 'package:go_money/features/common/presentation/pages/error_page.dart';
 import 'package:go_money/features/common/presentation/pages/splash_page.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:go_money/features/dashboard/presentation/pages/dasbboard_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router/common_router.dart';
+
 part 'router/dashboard_router.dart';
+
 part 'router/profile_router.dart';
+
 part 'router/login_router.dart';
 
 part 'app_router.g.dart';
@@ -73,14 +77,14 @@ class MyShellRouteScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) => _onChange(context, index),
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: const Icon(Icons.home),
+            label: context.tr.homePage,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: const Icon(Icons.person),
+            label: context.tr.authPage,
           ),
         ],
       ),

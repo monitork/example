@@ -9,6 +9,7 @@
   "departmentUpdateBtn": "Update",
   "description": "Description",
   "emailInvalid": "Invalid email",
+  "email": "Email",
   "or": "or",
   "organizationName": "Organization name",
   "organizationNameNotEmpty": "Organization name must not be empty",
@@ -26,5 +27,8 @@
   "btnIncreasement": "Increasement",
   "btnChangeLanguage": "Change Language",
   "btnChangeTheme": "Change Theme",
+  "hello": "Hello",
+  "authPage": "Profile",
+  "homePage": "Home",
   "endText": "================================================="
 }
