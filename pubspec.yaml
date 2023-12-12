@@ -17,6 +17,7 @@ dependencies:
   hooks_riverpod: ^2.4.9
   flutter_hooks: ^0.20.3
   # infrastructure
+  chopper: ^7.0.9
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   shared_preferences: ^2.2.2
@@ -46,6 +47,9 @@ dev_dependencies:
   riverpod_lint: ^2.3.2
   custom_lint: ^0.5.4
   go_router_builder: ^2.3.0
+  chopper_generator: ^7.0.6
+  swagger_dart_code_generator: ^2.13.3
+
 
 flutter:
   uses-material-design: true

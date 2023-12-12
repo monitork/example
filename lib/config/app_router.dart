@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_money/features/auth/presentation/pages/login_page.dart';
+import 'package:go_money/features/auth/presentation/pages/profile_page.dart';
 import 'package:go_money/features/common/presentation/pages/error_page.dart';
 import 'package:go_money/features/common/presentation/pages/splash_page.dart';
 import 'package:go_money/features/dashboard/presentation/pages/dasbboard_page.dart';
@@ -7,9 +10,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router/common_router.dart';
 part 'router/dashboard_router.dart';
+part 'router/profile_router.dart';
+part 'router/login_router.dart';
+
 part 'app_router.g.dart';
 
-final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
+final _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
 /// [goRouter] this function wrapper AppRouter inside riverpod
 @riverpod
@@ -24,4 +31,68 @@ GoRouter goRouter(GoRouterRef ref) {
   );
 
   return router;
+}
+
+@TypedShellRoute<AppShellRouteData>(
+  routes: <TypedRoute<RouteData>>[
+    TypedGoRoute<DashboardRouter>(path: DashboardRouter.path),
+    TypedGoRoute<ProfiledRouter>(path: ProfiledRouter.path),
+  ],
+)
+class AppShellRouteData extends ShellRouteData {
+  ///
+  const AppShellRouteData();
+
+  static final GlobalKey<NavigatorState> $navigatorKey = _shellNavigatorKey;
+
+  @override
+  Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
+    return MyShellRouteScreen(child: navigator);
+  }
+}
+
+class MyShellRouteScreen extends StatelessWidget {
+  const MyShellRouteScreen({required this.child, super.key});
+
+  final Widget child;
+
+  int getCurrentIndex(BuildContext context) {
+    final location = GoRouterState.of(context).uri.toString();
+    if (location.startsWith('/profile')) {
+      return 1;
+    }
+    return 0;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final int selectedIndex = getCurrentIndex(context);
+
+    return Scaffold(
+      body: child,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: (index) => _onChange(context, index),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _onChange(BuildContext context, int index) {
+    switch (index) {
+      case 0:
+        const DashboardRouter().go(context);
+      case 1:
+        const ProfiledRouter().go(context);
+    }
+  }
 }

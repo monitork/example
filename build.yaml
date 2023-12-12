@@ -8,6 +8,7 @@ targets:
           include:
             - "**/entities/**.dart"
             - "**/dto/**.dart"
+            - "**/swagger_generated_code/**.dart"
       riverpod_generator:
         generate_for:
           include:
@@ -29,3 +30,13 @@ targets:
             - "lib/config/app_router.dart"
           exclude:
             - "lib/features/**.dart"
+      chopper_generator:
+        options:
+          header: "//Generated code"
+      swagger_dart_code_generator:
+        options:
+        # custom configuration options!
+          input_folder: "assets/input_folder/"
+          output_folder: "lib/features/common/infrastructure/datasources/swagger_generated_code/"
+          ignore_headers: true
+          separate_models: true

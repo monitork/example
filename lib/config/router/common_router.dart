@@ -7,7 +7,7 @@ class SplashRoute extends GoRouteData {
   const SplashRoute();
 
   ///[path] SplashPage path
-  static const String path = '/';
+  static const String path = '/splash';
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const SplashPage();

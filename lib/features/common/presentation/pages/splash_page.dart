@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_money/config/app_router.dart';
+import 'package:go_money/features/auth/application/auth_controller.dart';
 import 'package:go_money/features/common/presentation/widgets/wrapper.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -11,9 +12,16 @@ class SplashPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(authControllerProvider, (previous, next) {
+      if (next != null) {
+        const DashboardRouter().go(context);
+      } else {
+        const LoginRouter().go(context);
+      }
+    });
     useEffect(
       () {
-        Future<void>.delayed(const Duration(seconds: 1)).then((_) => const DashboardRouter().go(context));
+        ref.read(authControllerProvider.notifier).onCheck();
         return null;
       },
       [],
