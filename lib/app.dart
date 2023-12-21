@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_money/config/app_constants.dart';
 import 'package:go_money/config/app_router.dart';
 import 'package:go_money/config/app_theme.dart';
-import 'package:go_money/features/common/application/localization_controller.dart';
-import 'package:go_money/features/common/application/theme_controller.dart';
-import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/core/application/localization_controller.dart';
+import 'package:go_money/core/application/theme_controller.dart';
+import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 ///
@@ -20,8 +21,9 @@ class MoneyApp extends HookConsumerWidget {
     useEffect(() => router.dispose, [router]);
 
     return MaterialApp.router(
+      restorationScopeId: AppConstants.restorationScopeId,
       onGenerateTitle: (context) => context.tr.appName,
-      themeMode: ref.watch(themeControllerProvider) ? ThemeMode.dark : ThemeMode.light,
+      themeMode: ref.watch(currentAppThemeModeProvider),
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -51,9 +53,7 @@ class _Unfocus extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: () {
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
+      onTap: NavigationService.removeFocus,
       child: child,
     );
   }

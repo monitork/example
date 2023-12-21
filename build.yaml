@@ -13,6 +13,7 @@ targets:
         generate_for:
           include:
             - "**/application/**.dart"
+            - "**/common/**.dart"
             - "**/**_provider.dart"
             - "lib/l10n/app_localizations.dart"
             - "lib/config/app_router.dart"
@@ -37,6 +38,6 @@ targets:
         options:
         # custom configuration options!
           input_folder: "assets/input_folder/"
-          output_folder: "lib/features/common/infrastructure/datasources/swagger_generated_code/"
+          output_folder: "lib/core/infrastructure/datasources/swagger_generated_code/"
           ignore_headers: true
           separate_models: true

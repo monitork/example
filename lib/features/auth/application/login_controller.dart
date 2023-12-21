@@ -1,4 +1,3 @@
-import 'package:go_money/config/app_provider.dart';
 import 'package:go_money/features/auth/auth_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

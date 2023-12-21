@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:go_money/config/auth/auth_interceptor.dart';
-import 'package:go_money/features/common/common_provider.dart';
-import 'package:go_money/features/common/infrastructure/datasources/swagger_generated_code/client_index.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:go_money/config/rest_api/auth_interceptor.dart';
+import 'package:go_money/core/core_provider.dart';
+import 'package:go_money/core/infrastructure/datasources/swagger_generated_code/client_index.dart';
 import 'package:go_money/l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -26,7 +27,7 @@ PlatziApi platziApi(PlatziApiRef ref) {
     interceptors: [
       AuthInterceptor(ref.read(tokenRepositoryProvider)),
     ],
-    baseUrl: Uri.tryParse('https://api.escuelajs.co'),
+    baseUrl: Uri.tryParse(dotenv.get('BASE_URL')),
   );
 }
 
@@ -39,11 +40,22 @@ PlatziApi platziApi(PlatziApiRef ref) {
 ///
 
 /// Triggered from bootstrap() to complete futures
-Future<void> intGlobalProvider(ProviderContainer container) async {
+Future<void> intGlobalProvider(ProviderContainer container, AppEnv env) async {
   //Core
-  container..read(localeProvider)
-  ..read(tokenRepositoryProvider);
+  await dotenv.load(fileName: 'assets/env/${env.name}.env');
+  container
+    ..read(localeProvider)
+    ..read(tokenRepositoryProvider);
   if (kDebugMode) {
     print('[SHIN] ....');
   }
+}
+
+enum AppEnv {
+  production(name: 'production'),
+  stagging(name: 'stagging'),
+  development(name: 'development');
+
+  const AppEnv({required this.name});
+  final String name;
 }

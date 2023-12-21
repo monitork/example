@@ -1,10 +1,10 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:go_money/features/auth/domain/entities/user_entity.dart';
 import 'package:go_money/features/auth/domain/repositores/auth_repository.dart';
-import 'package:go_money/features/common/domain/failures/failure.dart';
-import 'package:go_money/features/common/domain/repositories/token_repository.dart';
-import 'package:go_money/features/common/infrastructure/datasources/swagger_generated_code/client_index.dart';
-import 'package:go_money/features/common/infrastructure/datasources/swagger_generated_code/platzi_api.models.swagger.dart';
+import 'package:go_money/core/domain/failures/failure.dart';
+import 'package:go_money/core/domain/repositories/token_repository.dart';
+import 'package:go_money/core/infrastructure/datasources/swagger_generated_code/client_index.dart';
+import 'package:go_money/core/infrastructure/datasources/swagger_generated_code/platzi_api.models.swagger.dart';
 
 class AuthRepositoryImp extends AuthRepository {
   AuthRepositoryImp({required PlatziApi api, required TokenRepository tokenR})

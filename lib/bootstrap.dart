@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Initializes services and controllers before the start of the application
-Future<ProviderContainer> bootstrap() async {
+Future<ProviderContainer> bootstrap(AppEnv env) async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final container = ProviderContainer(
@@ -15,7 +15,7 @@ Future<ProviderContainer> bootstrap() async {
     ],
     observers: [if (kDebugMode) _Logger()],
   );
-  await app_provider.intGlobalProvider(container);
+  await app_provider.intGlobalProvider(container, env);
   return container;
 }
 

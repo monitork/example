@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_money/features/common/application/localization_controller.dart';
+import 'package:go_money/core/application/localization_controller.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_localizations.g.dart';

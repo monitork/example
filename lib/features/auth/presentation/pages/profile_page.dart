@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_money/features/auth/application/auth_controller.dart';
-import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProfilePage extends ConsumerWidget {
