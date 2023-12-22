@@ -1,5 +1,4 @@
-import 'package:fpdart/fpdart.dart';
-import 'package:go_money/core/domain/failures/failure.dart';
+import 'package:core/core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///

@@ -1,5 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:go_money/core/infrastructure/datasources/network/data_connection_checker.dart';
+import 'package:core/data_connection_checker.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'network_info.g.dart';

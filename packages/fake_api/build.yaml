@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      chopper_generator:
+        options:
+          header: "//Generated code"
+      swagger_dart_code_generator:
+        options:
+        # custom configuration options!
+          input_folder: "lib/input_folder/"
+          output_folder: "lib/datasources/swagger_generated_code/"
+          ignore_headers: true
+          separate_models: true

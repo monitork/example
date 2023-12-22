@@ -12,19 +12,14 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  # State
-  riverpod_annotation: ^2.2.2
-  hooks_riverpod: ^2.4.9
-  flutter_hooks: ^0.20.3
   # infrastructure
-  chopper: ^7.0.9
+  riverpod_annotation: ^2.2.2
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   shared_preferences: ^2.2.2
   uuid: ^4.2.1
   #  Domain
   validators: ^3.0.0
-  fpdart: ^1.1.0
   # Other
   go_router: ^12.1.1
   intl: ^0.18.1
@@ -36,7 +31,12 @@ dependencies:
   url_launcher: ^6.2.1
   connectivity_plus: ^5.0.2
   fluttertoast: ^8.2.4
-  flutter_dotenv: ^5.1.0
+  resource:
+    path: packages/resource
+  core:
+    path: packages/core
+  fake_api:
+    path: packages/fake_api
 
 dev_dependencies:
   flutter_test:
@@ -50,14 +50,9 @@ dev_dependencies:
   riverpod_lint: ^2.3.2
   custom_lint: ^0.5.4
   go_router_builder: ^2.3.0
-  chopper_generator: ^7.0.6
-  swagger_dart_code_generator: ^2.13.3
 
 flutter:
   uses-material-design: true
   generate: true
-
-  assets:
-    - assets/env/
 
 scripts: derry.yaml

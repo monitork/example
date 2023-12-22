@@ -1,12 +1,8 @@
-// ignore_for_file: public_member_api_docs
-
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_money/config/app_theme.dart';
-import 'package:go_money/config/theme.dart';
 import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:resource/resource.dart';
 
 ///
 @immutable

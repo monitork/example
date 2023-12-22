@@ -1,8 +1,8 @@
+import 'package:core/core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_money/config/app_provider.dart' as app_provider;
 import 'package:go_money/config/app_provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Initializes services and controllers before the start of the application

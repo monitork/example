@@ -1,7 +1,6 @@
 import 'dart:ui';
 
-import 'package:fpdart/fpdart.dart';
-import 'package:go_money/core/domain/failures/failure.dart';
+import 'package:core/core.dart';
 
 ///
 abstract class LocalizationRepository {

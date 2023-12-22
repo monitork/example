@@ -1,5 +1,4 @@
-import 'package:fpdart/fpdart.dart';
-import 'package:go_money/core/domain/failures/failure.dart';
+import 'package:core/core.dart';
 import 'package:go_money/core/domain/repositories/theme_repository.dart';
 import 'package:go_money/core/infrastructure/datasources/local/theme_datasource.dart';
 

@@ -22,6 +22,7 @@ class MyShellRouteScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) => _onChange(context, index),
+        unselectedIconTheme: IconThemeData(color: context.colors.defaultIcon),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Icons.home),

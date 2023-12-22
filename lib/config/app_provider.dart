@@ -1,10 +1,9 @@
+import 'package:core/core.dart';
+import 'package:fake_api/fake_api.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_money/config/rest_api/auth_interceptor.dart';
 import 'package:go_money/core/core_provider.dart';
-import 'package:go_money/core/infrastructure/datasources/swagger_generated_code/client_index.dart';
-import 'package:go_money/l10n/app_localizations.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:resource/resource.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,7 +26,7 @@ PlatziApi platziApi(PlatziApiRef ref) {
     interceptors: [
       AuthInterceptor(ref.read(tokenRepositoryProvider)),
     ],
-    baseUrl: Uri.tryParse(dotenv.get('BASE_URL')),
+    baseUrl: Uri.tryParse(Resource.env.get('BASE_URL')),
   );
 }
 
@@ -42,10 +41,8 @@ PlatziApi platziApi(PlatziApiRef ref) {
 /// Triggered from bootstrap() to complete futures
 Future<void> intGlobalProvider(ProviderContainer container, AppEnv env) async {
   //Core
-  await dotenv.load(fileName: 'assets/env/${env.name}.env');
-  container
-    ..read(localeProvider)
-    ..read(tokenRepositoryProvider);
+  await Resource.initEnv();
+  container.read(tokenRepositoryProvider);
   if (kDebugMode) {
     print('[SHIN] ....');
   }
