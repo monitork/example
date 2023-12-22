@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:go_money/core/application/localization_controller.dart';
-import 'package:go_money/core/application/theme_controller.dart';
-import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
-import 'package:go_money/core/presentation/widgets/wrapper.dart';
+import 'package:go_money/features/common/application/localization_controller.dart';
+import 'package:go_money/features/common/application/theme_controller.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/features/common/presentation/widgets/wrapper.dart';
 import 'package:go_money/features/dashboard/application/counter_controller.dart';
 
 ///

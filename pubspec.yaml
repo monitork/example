@@ -37,6 +37,7 @@ dependencies:
     path: packages/core
   fake_api:
     path: packages/fake_api
+  chopper: ^7.0.9
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,4 @@
-// ignore_for_file: public_member_api_docs
-
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+part of '_widgets.dart';
 
 class Gap extends LeafRenderObjectWidget {
   const Gap(this.gap, {super.key});

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_money/config/app_constants.dart';
 import 'package:go_money/config/app_router.dart';
-import 'package:go_money/core/application/localization_controller.dart';
-import 'package:go_money/core/application/theme_controller.dart';
-import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/features/common/application/localization_controller.dart';
+import 'package:go_money/features/common/application/theme_controller.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:resource/resource.dart';
 
 ///

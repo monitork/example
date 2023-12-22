@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:fake_api/fake_api.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_money/config/rest_api/auth_interceptor.dart';
-import 'package:go_money/core/core_provider.dart';
+import 'package:go_money/features/common/common_provider.dart';
 import 'package:resource/resource.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -6,5 +6,6 @@ export 'data_connection_checker.dart';
 export 'package:fpdart/fpdart.dart';
 export 'failures/failure.dart';
 export 'extensions/extensions.dart';
+export 'widgets/_widgets.dart';
 
 class Core {}

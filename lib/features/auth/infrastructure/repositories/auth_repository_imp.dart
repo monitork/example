@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:fake_api/fake_api.dart';
-import 'package:go_money/core/domain/repositories/token_repository.dart';
+import 'package:go_money/features/common/domain/repositories/token_repository.dart';
 import 'package:go_money/features/auth/domain/entities/user_entity.dart';
 import 'package:go_money/features/auth/domain/repositores/auth_repository.dart';
 

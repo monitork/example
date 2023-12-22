@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:go_money/core/core_provider.dart';
+import 'package:go_money/features/common/common_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'localization_controller.g.dart';

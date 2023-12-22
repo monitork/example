@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:resource/resource.dart';
 
@@ -91,15 +91,17 @@ class OnScreenKeyboard extends HookConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: KeyboardConfigs.quickKeys
-                .map((e) => SizedBox(
-                      height: 40,
-                      width: context.getWidth(0.33),
-                      child: Keypad(
-                        _Key('+${e.value}'),
-                        color: context.colors.secondary,
-                        onTap: () => store.dispatch(e),
-                      ),
-                    ))
+                .map(
+                  (e) => SizedBox(
+                    height: 40,
+                    width: context.getWidth(0.33),
+                    child: Keypad(
+                      _Key('+${e.value}'),
+                      color: context.colors.secondary,
+                      onTap: () => store.dispatch(e),
+                    ),
+                  ),
+                )
                 .toList(),
           ),
           Expanded(
@@ -183,7 +185,7 @@ class OnScreenKeyboard extends HookConsumerWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

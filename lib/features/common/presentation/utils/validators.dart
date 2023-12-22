@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_money/core/presentation/utils/extensions/extensions.dart';
+import 'package:go_money/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:validators/validators.dart';
 
 /// Shorthand type for validator function

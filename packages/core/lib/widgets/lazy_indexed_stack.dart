@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+part of '_widgets.dart';
 
 /// An extended IndexedStack that builds the required widget only when it is needed, and returns the pre-built widget when it is needed again.
 class LazyIndexedStack extends StatefulWidget {

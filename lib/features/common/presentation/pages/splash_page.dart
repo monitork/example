@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_money/config/app_router.dart';
-import 'package:go_money/core/presentation/widgets/wrapper.dart';
+import 'package:go_money/features/common/presentation/widgets/wrapper.dart';
 import 'package:go_money/features/auth/application/auth_controller.dart';
 
 /// Default app splash screen

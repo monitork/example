@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:chopper/chopper.dart';
-import 'package:go_money/core/domain/repositories/token_repository.dart';
+import 'package:go_money/features/common/domain/repositories/token_repository.dart';
 
 ///
 class AuthInterceptor implements RequestInterceptor {

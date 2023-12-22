@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
-import 'package:go_money/core/domain/repositories/theme_repository.dart';
-import 'package:go_money/core/infrastructure/datasources/local/theme_datasource.dart';
+import 'package:go_money/features/common/domain/repositories/theme_repository.dart';
+import 'package:go_money/features/common/infrastructure/datasources/local/theme_datasource.dart';
 
 ///
 class ThemeRepositoryImp extends ThemeRepository {

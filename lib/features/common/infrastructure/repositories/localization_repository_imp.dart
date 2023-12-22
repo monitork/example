@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:core/core.dart';
-import 'package:go_money/core/domain/repositories/localization_repository.dart';
-import 'package:go_money/core/infrastructure/datasources/local/localization_datasource.dart';
+import 'package:go_money/features/common/domain/repositories/localization_repository.dart';
+import 'package:go_money/features/common/infrastructure/datasources/local/localization_datasource.dart';
 
 ///
 class LocalizationRepositoryImp extends LocalizationRepository {

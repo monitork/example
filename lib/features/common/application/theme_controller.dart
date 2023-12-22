@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_money/core/core_provider.dart';
-import 'package:go_money/core/presentation/providers/_provider.dart';
-import 'package:go_money/core/presentation/utils/helpers/theme_helper.dart';
+import 'package:go_money/features/common/common_provider.dart';
+import 'package:go_money/features/common/presentation/providers/_provider.dart';
+import 'package:go_money/features/common/presentation/utils/helpers/theme_helper.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'theme_controller.g.dart';
 

@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
-import 'package:go_money/core/domain/repositories/token_repository.dart';
-import 'package:go_money/core/infrastructure/datasources/local/token_datasource.dart';
+import 'package:go_money/features/common/domain/repositories/token_repository.dart';
+import 'package:go_money/features/common/infrastructure/datasources/local/token_datasource.dart';
 
 ///
 class TokenRepositoryImp extends TokenRepository {
