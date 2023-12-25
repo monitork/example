@@ -1,5 +1,7 @@
 part of '../app_router.dart';
 
+const _activeIconColor = Colors.red;
+
 class MyShellRouteScreen extends StatelessWidget {
   const MyShellRouteScreen({required this.child, super.key});
 
@@ -13,6 +15,13 @@ class MyShellRouteScreen extends StatelessWidget {
     return 0;
   }
 
+  Widget buildHomeIcon({bool isSelected = false}) {
+    return AppAssets.svg.homeSvgrepoCom.svg(
+      package: Resource.resourceWithSplash,
+      color: isSelected ? Colors.red : Colors.green,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final selectedIndex = getCurrentIndex(context);
@@ -22,14 +31,38 @@ class MyShellRouteScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) => _onChange(context, index),
-        unselectedIconTheme: IconThemeData(color: context.colors.defaultIcon),
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            activeIcon: AppAssets.svg.homeSvgrepoCom.svg(
+              package: Resource.resourceWithSplash,
+              color: _activeIconColor,
+              width: IconSizes.md,
+              height: IconSizes.md,
+            ),
+            icon: AppAssets.svg.homeSvgrepoCom.svg(
+              package: Resource.resourceWithSplash,
+              width: IconSizes.md,
+              height: IconSizes.md,
+            ),
             label: context.tr.homePage,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
+            activeIcon: AppAssets.svg.profileSvgrepoCom.svg(
+              package: Resource.resourceWithSplash,
+              color: _activeIconColor,
+              width: IconSizes.md,
+              height: IconSizes.md,
+            ),
+            icon: AppAssets.svg.profileSvgrepoCom.svg(
+              package: Resource.resourceWithSplash,
+              width: IconSizes.md,
+              height: IconSizes.md,
+            ),
             label: context.tr.authPage,
           ),
         ],

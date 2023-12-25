@@ -1,7 +1,7 @@
 part of 'extensions.dart';
 
 ///
-extension IterableExtension on Iterable<int> {
+extension Iterable2Extension on Iterable<int> {
   ///
   int getMax() => reduce(math.max);
 

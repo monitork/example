@@ -37,6 +37,17 @@ class $AssetsFontsGen {
   List<String> get values => [gitkeep];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/background.jpg
+  AssetGenImage get background =>
+      const AssetGenImage('assets/images/background.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [background];
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
@@ -94,6 +105,7 @@ class AppAssets {
 
   static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 

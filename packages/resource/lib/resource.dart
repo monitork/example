@@ -28,6 +28,8 @@ extension ResourceEx on String? {
 class Resource {
   Resource._();
   static const assetResource = 'packages/resource';
+  static const resourceWithSplash = 'resource/';
+  static const resource = 'resource';
   static DotEnv env = dotenv;
 
   static Future<void> initEnv() async {

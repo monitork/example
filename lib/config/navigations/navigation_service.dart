@@ -1,7 +1,8 @@
 part of '../app_router.dart';
 
 abstract class NavigationService {
-  static final context = _rootNavigatorKey.currentContext;
+  NavigationService._();
+  static final _context = _rootNavigatorKey.currentContext;
 
   static void removeFocus() {
     FocusManager.instance.primaryFocus?.unfocus();
@@ -39,13 +40,13 @@ abstract class NavigationService {
   /// ==============> Start
   /// Make go router run without context
 
-  static void go(String location) => context?.go(location);
+  static void go(String location) => _context?.go(location);
 
-  static Future<T?>? push<T>(String location) => context?.push<T>(location);
+  static Future<T?>? push<T>(String location) => _context?.push<T>(location);
 
-  static void pushReplacement(String location) => context?.pushReplacement(location);
+  static void pushReplacement(String location) => _context?.pushReplacement(location);
 
-  static void replace(String location) => context?.replace(location);
+  static void replace(String location) => _context?.replace(location);
 
   /// ==============> End
 }

@@ -62,5 +62,5 @@ class AppTextTheme {
 }
 
 extension AppTextThemeX on BuildContext {
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  TextTheme get customTextTheme => Theme.of(this).textTheme;
 }

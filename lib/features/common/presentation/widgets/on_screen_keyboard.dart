@@ -179,7 +179,7 @@ class OnScreenKeyboard extends HookConsumerWidget {
                             color: Colors.white,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

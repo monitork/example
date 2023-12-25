@@ -7,5 +7,6 @@ export 'package:fpdart/fpdart.dart';
 export 'failures/failure.dart';
 export 'extensions/extensions.dart';
 export 'widgets/_widgets.dart';
+export 'package:collection/collection.dart';
 
 class Core {}
