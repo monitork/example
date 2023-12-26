@@ -1,5 +1,7 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_money/features/auth/auth_provider.dart';
 import 'package:go_money/features/auth/presentation/pages/login_page.dart';
 import 'package:go_money/features/auth/presentation/pages/profile_page.dart';
 import 'package:go_money/features/common/presentation/pages/error_page.dart';
@@ -30,6 +32,16 @@ GoRouter goRouter(GoRouterRef ref) {
     initialLocation: SplashRoute.path,
     routes: $appRoutes,
     errorBuilder: (_, state) => ErrorPage(message: state.error?.message ?? ''),
+    redirect: (_, state) {
+      final loggedIn = authStateListenable.value;
+      if (loggedIn == null) {
+        return SplashRoute.path;
+      } else if (loggedIn) {
+        return DashboardRouter.path;
+      }
+      return LoginRouter.path;
+    },
+    refreshListenable: authStateListenable,
   );
 
   return router;

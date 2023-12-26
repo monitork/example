@@ -1,11 +1,11 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:core/data_connection_checker.dart';
+import 'package:core/core.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'network_info.g.dart';
+part 'network_info_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-NetworkInfo networkInfo(NetworkInfoRef ref) {
+NetworkInfo networkInfo(Ref ref) {
   return NetworkInfo(
     DataConnectionChecker(),
     Connectivity(),

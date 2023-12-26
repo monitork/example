@@ -13,7 +13,7 @@ class AuthRepositoryImp extends AuthRepository {
   final TokenRepository _tokenR;
 
   @override
-  Future<Either<Failure, UserEntity?>> isLoggedIn() async {
+  FutureEither<UserEntity?> isLoggedIn() async {
     try {
       final res = _tokenR.token();
       final token = res.fold((l) => '', (r) => r);
@@ -28,7 +28,7 @@ class AuthRepositoryImp extends AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> doLogin() async {
+  FutureEither<bool> doLogin() async {
     try {
       final res = await _api.apiV1AuthLoginPost(
         body: const LoginDto(
@@ -59,7 +59,7 @@ class AuthRepositoryImp extends AuthRepository {
     throw UnimplementedError();
   }
 
-  Future<Either<Failure, UserEntity?>> doProfile() async {
+  FutureEither<UserEntity?> doProfile() async {
     try {
       final res = await _api.apiV1AuthProfileGet();
       final user = UserEntity.fromJson(res.body as Map<String, dynamic>);

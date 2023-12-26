@@ -5,8 +5,8 @@ import 'package:core/core.dart';
 ///
 abstract class LocalizationRepository {
   ///
-  Either<Failure, Locale> currentLocalization();
+  EitherFailure<Locale> currentLocalization();
 
   ///
-  Future<Either<Failure, bool>> setLocalization(Locale locale);
+  FutureEither<bool> setLocalization(Locale locale);
 }

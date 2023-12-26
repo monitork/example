@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:go_money/config/app_provider.dart';
 import 'package:go_money/features/auth/domain/repositores/auth_repository.dart';
 import 'package:go_money/features/auth/infrastructure/repositories/auth_repository_imp.dart';
@@ -13,3 +14,5 @@ AuthRepository authRepository(AuthRepositoryRef ref) {
     tokenR: ref.read(tokenRepositoryProvider),
   );
 }
+
+final authStateListenable = ValueNotifier<bool?>(null);

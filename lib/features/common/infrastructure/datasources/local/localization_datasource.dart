@@ -11,7 +11,7 @@ class LocalizationDatasource {
   static const _key = 'user_localization';
 
   /// get the localization from the device storage
-  Either<Failure, String> get() {
+  EitherFailure<String> get() {
     final v = _prefs.getString(_key);
     if (v == null) {
       return left(const Failure.empty());

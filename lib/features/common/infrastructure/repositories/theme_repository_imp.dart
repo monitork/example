@@ -10,7 +10,7 @@ class ThemeRepositoryImp extends ThemeRepository {
   final ThemeDatasource _datasource;
 
   @override
-  Either<Failure, bool> isDark() {
+  EitherFailure<bool> isDark() {
     try {
       return _datasource.get();
     } catch (_) {
@@ -19,7 +19,7 @@ class ThemeRepositoryImp extends ThemeRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> setTheme({bool isDark = false}) async {
+  FutureEither<bool> setTheme({bool isDark = false}) async {
     try {
       final res = await _datasource.store(isDark: false);
       return right(res);

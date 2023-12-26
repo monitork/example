@@ -11,7 +11,7 @@ class TokenDatasource {
   static const _key = 'access_token';
   static const _keyRefresh = 'refresh_token';
 
-  Either<Failure, String> get() {
+  EitherFailure<String> get() {
     final v = _prefs.getString(_key);
     if (v == null) {
       return left(const Failure.empty());
@@ -20,7 +20,7 @@ class TokenDatasource {
     return right(v);
   }
 
-  Either<Failure, String> getRefresh() {
+  EitherFailure<String> getRefresh() {
     final v = _prefs.getString(_keyRefresh);
     if (v == null) {
       return left(const Failure.empty());

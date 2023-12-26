@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_money/config/extensions/widget_ref_extension.dart';
 import 'package:go_money/features/common/presentation/widgets/wrapper.dart';
+import 'package:go_money/features/dashboard/application/dashboard_controller.dart';
 import 'package:go_money/features/dashboard/presentation/widgets/out_new_products.dart';
 
 const _expandedHeight = 500.0;
@@ -13,6 +15,12 @@ class DashboardPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final top = MediaQuery.of(context).padding.top;
     final minExtent = kToolbarHeight + top;
+    // final controller = ref.read(dashboardControllerProvider.notifier);
+    ref.easyListen(
+      dashboardControllerProvider,
+      handleLoading: true,
+      handleError: true,
+    );
     return Wrapper(
       child: Scaffold(
         body: CustomScrollView(

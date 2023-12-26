@@ -14,7 +14,7 @@ class LocalizationRepositoryImp extends LocalizationRepository {
   final LocalizationDatasource _datasource;
 
   @override
-  Either<Failure, Locale> currentLocalization() {
+  EitherFailure<Locale> currentLocalization() {
     try {
       final res = _datasource.get();
       if (res.isLeft()) {
@@ -27,7 +27,7 @@ class LocalizationRepositoryImp extends LocalizationRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> setLocalization(Locale locale) async {
+  FutureEither<bool> setLocalization(Locale locale) async {
     try {
       final res = await _datasource.store(locale.languageCode);
       return right(res);

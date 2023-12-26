@@ -3,8 +3,8 @@ import 'package:core/core.dart';
 ///
 abstract class ThemeRepository {
   ///
-  Either<Failure, bool> isDark();
+  EitherFailure<bool> isDark();
 
   ///
-  Future<Either<Failure, bool>> setTheme({bool isDark = false});
+  FutureEither<bool> setTheme({bool isDark = false});
 }

@@ -6,7 +6,7 @@ abstract class ValueAbstract<T> {
   const ValueAbstract();
 
   /// getter for value
-  Either<Failure, T> get value;
+  EitherFailure<T> get value;
 
   @override
   String toString() => value.fold((l) => l.error, (r) => r.toString());

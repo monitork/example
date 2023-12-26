@@ -17,6 +17,7 @@ dependencies:
   url_launcher: ^6.2.2
   intl: ^0.18.1
   collection: ^1.18.0
+  stack_trace: ^1.11.1
 
 dev_dependencies:
   flutter_test:

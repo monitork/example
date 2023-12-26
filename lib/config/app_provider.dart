@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:fake_api/fake_api.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_money/config/rest_api/auth_interceptor.dart';
+import 'package:go_money/features/auth/application/auth_controller.dart';
 import 'package:go_money/features/common/common_provider.dart';
 import 'package:resource/resource.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -42,7 +43,9 @@ PlatziApi platziApi(PlatziApiRef ref) {
 Future<void> intGlobalProvider(ProviderContainer container, AppEnv env) async {
   //Core
   await Resource.initEnv();
-  container.read(tokenRepositoryProvider);
+  container
+    ..read(tokenRepositoryProvider)
+    ..read(authControllerProvider);
   if (kDebugMode) {
     print('[SHIN] ....');
   }

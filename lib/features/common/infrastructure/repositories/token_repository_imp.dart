@@ -9,7 +9,7 @@ class TokenRepositoryImp extends TokenRepository {
   final TokenDatasource _datasource;
 
   @override
-  Future<Either<Failure, bool>> setToken(String token) async {
+  FutureEither<bool> setToken(String token) async {
     try {
       final res = await _datasource.store(token);
       return right(res);
@@ -19,10 +19,10 @@ class TokenRepositoryImp extends TokenRepository {
   }
 
   @override
-  Either<Failure, String> token() => _datasource.get();
+  EitherFailure<String> token() => _datasource.get();
 
   @override
-  Future<Either<Failure, bool>> setTokenRefresh(String token) async {
+  FutureEither<bool> setTokenRefresh(String token) async {
     try {
       final res = await _datasource.storeRefresh(token);
       return right(res);
@@ -32,5 +32,5 @@ class TokenRepositoryImp extends TokenRepository {
   }
 
   @override
-  Either<Failure, String> tokenRefresh() => _datasource.getRefresh();
+  EitherFailure<String> tokenRefresh() => _datasource.getRefresh();
 }

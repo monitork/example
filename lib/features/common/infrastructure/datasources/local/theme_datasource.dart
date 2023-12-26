@@ -11,7 +11,7 @@ class ThemeDatasource {
   static const _key = 'user_theme';
 
   /// get current theme if == true ==> isDark
-  Either<Failure, bool> get() {
+  EitherFailure<bool> get() {
     final v = _prefs.getBool(_key);
     if (v == null) {
       return left(const Failure.empty());

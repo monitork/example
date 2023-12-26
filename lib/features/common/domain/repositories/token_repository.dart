@@ -3,10 +3,10 @@ import 'package:core/core.dart';
 ///
 abstract class TokenRepository {
   ///
-  Either<Failure, String> token();
-  Either<Failure, String> tokenRefresh();
+  EitherFailure<String> token();
+  EitherFailure<String> tokenRefresh();
 
   ///
-  Future<Either<Failure, bool>> setToken(String token);
-  Future<Either<Failure, bool>> setTokenRefresh(String token);
+  FutureEither<bool> setToken(String token);
+  FutureEither<bool> setTokenRefresh(String token);
 }
