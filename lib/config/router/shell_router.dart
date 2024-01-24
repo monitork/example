@@ -39,13 +39,13 @@ class MyShellRouteScreen extends StatelessWidget {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             activeIcon: AppAssets.svg.homeSvgrepoCom.svg(
-              package: Resource.resourceWithSplash,
+              package: Resource.resource,
               color: _activeIconColor,
               width: IconSizes.md,
               height: IconSizes.md,
             ),
             icon: AppAssets.svg.homeSvgrepoCom.svg(
-              package: Resource.resourceWithSplash,
+              package: Resource.resource,
               width: IconSizes.md,
               height: IconSizes.md,
             ),
@@ -53,13 +53,13 @@ class MyShellRouteScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             activeIcon: AppAssets.svg.profileSvgrepoCom.svg(
-              package: Resource.resourceWithSplash,
+              package: Resource.resource,
               color: _activeIconColor,
               width: IconSizes.md,
               height: IconSizes.md,
             ),
             icon: AppAssets.svg.profileSvgrepoCom.svg(
-              package: Resource.resourceWithSplash,
+              package: Resource.resource,
               width: IconSizes.md,
               height: IconSizes.md,
             ),
@@ -86,8 +86,6 @@ class DashboardRouter extends GoRouteData {
   ///[path] DashboardPage path
   static const String path = '/';
 
-  // @override
-  // Widget build(BuildContext context, GoRouterState state) => const DashboardPage();
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
     return const NoTransitionPage(child: DashboardPage());
@@ -98,9 +96,6 @@ class ProfiledRouter extends GoRouteData {
   const ProfiledRouter();
 
   static const String path = '/profile';
-
-  // @override
-  // Widget build(BuildContext context, GoRouterState state) => const ProfilePage();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {

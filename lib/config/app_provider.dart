@@ -53,9 +53,10 @@ Future<void> intGlobalProvider(ProviderContainer container, AppEnv env) async {
 
 enum AppEnv {
   production(name: 'production'),
-  stagging(name: 'stagging'),
+  staging(name: 'staging'),
   development(name: 'development');
 
   const AppEnv({required this.name});
+
   final String name;
 }

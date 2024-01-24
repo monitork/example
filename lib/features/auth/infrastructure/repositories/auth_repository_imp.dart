@@ -54,9 +54,10 @@ class AuthRepositoryImp extends AuthRepository {
   }
 
   @override
-  Future<bool> doLogout() {
-    // TODO: implement doLogout
-    throw UnimplementedError();
+  Future<void> doLogout() async {
+    // Call api logout if need
+    await _tokenR.setToken('');
+    await _tokenR.setTokenRefresh('');
   }
 
   FutureEither<UserEntity?> doProfile() async {

@@ -13,10 +13,15 @@ import 'package:resource/resource.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_router.g.dart';
+
 part 'navigations/navigation_service.dart';
+
 part 'navigations/navigation_transitions.dart';
+
 part 'router/auth_router.dart';
+
 part 'router/common_router.dart';
+
 part 'router/shell_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -34,12 +39,16 @@ GoRouter goRouter(GoRouterRef ref) {
     errorBuilder: (_, state) => ErrorPage(message: state.error?.message ?? ''),
     redirect: (_, state) {
       final loggedIn = authStateListenable.value;
-      if (loggedIn == null) {
+      final goingToLogin = state.matchedLocation.contains(LoginRouter.path);
+      final goingToSplash = state.matchedLocation.contains(SplashRoute.path);
+      if (loggedIn == null && !goingToLogin) {
         return SplashRoute.path;
-      } else if (loggedIn) {
-        return DashboardRouter.path;
       }
-      return LoginRouter.path;
+      if (!(loggedIn ?? false) && !goingToLogin) {
+        return LoginRouter.path;
+      }
+      if ((loggedIn ?? false) && goingToLogin || (loggedIn ?? false) && goingToSplash) return DashboardRouter.path;
+      return null;
     },
     refreshListenable: authStateListenable,
   );

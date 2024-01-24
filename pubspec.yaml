@@ -39,6 +39,7 @@ dependencies:
     path: packages/fake_api
   chopper: ^7.0.9
   animate_do: ^3.1.2
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
